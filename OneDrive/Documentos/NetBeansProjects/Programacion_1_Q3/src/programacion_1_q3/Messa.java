@@ -19,17 +19,17 @@ public class Messa {
      Scanner scanner = new Scanner(System.in);
         int limiteInferior, limiteSuperior;
 
-        // Pedir límites del intervalo
+        
         while (true) {
-            System.out.print("Introduce el límite inferior: ");
+            System.out.print("Introduce el limite inferior: ");
             limiteInferior = scanner.nextInt();
-            System.out.print("Introduce el límite superior: ");
+            System.out.print("Introduce el limite superior: ");
             limiteSuperior = scanner.nextInt();
 
             if (limiteInferior < limiteSuperior) {
-                break; // Si el límite inferior es menor que el superior, continuamos
+                break; // Si el limite inferior es menor que el superior, continuamos
             } else {
-                System.out.println("El límite inferior debe ser menor que el límite superior. Inténtalo de nuevo.");
+                System.out.println("El limite inferior debe ser menor que el limite superior. Intentalo de nuevo.");
             }
         }
 
@@ -37,37 +37,37 @@ public class Messa {
         int numerosFueraIntervalo = 0;
         boolean numeroIgualAlLimite = false;
         
-        // Introducción de números
+        // Introduccion de numeros
         while (true) {
-            System.out.print("Introduce un número (0 para terminar): ");
+            System.out.print("Introduce un numero (0 para terminar): ");
             int numero = scanner.nextInt();
 
             if (numero == 0) {
-                break; // Terminamos el programa si el número es 0
+                break; // Terminamos el programa si el numero es 0
             }
 
             if (numero > limiteInferior && numero < limiteSuperior) {
-                // El número está dentro del intervalo (intervalo abierto)
+                // El numero esta dentro del intervalo (intervalo abierto)
                 sumaDentroIntervalo += numero;
             } else {
-                // El número está fuera del intervalo
+                // El numero estq fuera del intervalo
                 numerosFueraIntervalo++;
             }   
 
             if (numero == limiteInferior || numero == limiteSuperior) {
-                numeroIgualAlLimite = true; // Hemos introducido un número igual a uno de los límites
+                numeroIgualAlLimite = true; // Hemos introducido un numero igual a uno de los limites
             }
         }
 
         // Mostrar resultados
-        System.out.println("Suma de los números dentro del intervalo: " + sumaDentroIntervalo);
-        System.out.println("Cantidad de números fuera del intervalo: " + numerosFueraIntervalo);
+        System.out.println("Suma de los numeros dentro del intervalo: " + sumaDentroIntervalo);
+        System.out.println("Cantidad de numeros fuera del intervalo: " + numerosFueraIntervalo);
         if (numeroIgualAlLimite) {
-            System.out.println("Se ha introducido al menos un número igual a uno de los límites del intervalo.");
+            System.out.println("Se ha introducido al menos un numero igual a uno de los limites del intervalo.");
         } else {
-            System.out.println("No se ha introducido ningún número igual a los límites del intervalo.");
+            System.out.println("No se ha introducido ningún numero igual a los limites del intervalo.");
         }
 
-        scanner.close();
+        
     }
 }
